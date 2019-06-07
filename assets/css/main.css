@@ -1,0 +1,448 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap&subset=cyrillic,cyrillic-ext");
+body, input {
+  font-family: "Comfortaa";
+}
+
+/* RGB palette for this application */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  line-height: 24px;
+  font-weight: 400;
+  font-size: 12px;
+  color: #161616;
+}
+
+input {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 15.6px;
+}
+
+h4 {
+  font-size: 13.2px;
+}
+
+h5 {
+  font-size: 12px;
+}
+
+h6 {
+  font-size: 10.8px;
+}
+
+.text-box {
+  outline: none;
+  background-color: white;
+  border: 2px solid #cccccc;
+  border-radius: 10px;
+  height: 30px;
+  padding: 0 12px;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  margin: 12px 24px;
+}
+.text-box:hover, .text-box:focus {
+  border-color: #00880b;
+}
+
+.radio-checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 36px;
+  cursor: pointer;
+  user-select: none;
+  margin: 12px 24px;
+  color: #161616;
+}
+.radio-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.radio-checkbox-container:hover input ~ .check-box {
+  background-color: #cccccc;
+}
+.radio-checkbox-container:hover input ~ .radio-box {
+  background-color: #cccccc;
+}
+.radio-checkbox-container input:checked ~ .check-box {
+  background-color: #00880b;
+}
+.radio-checkbox-container input:checked ~ .check-box::after {
+  display: block;
+}
+.radio-checkbox-container input:checked ~ .radio-box {
+  background-color: #00880b;
+}
+.radio-checkbox-container input:checked ~ .radio-box::after {
+  display: block;
+}
+.radio-checkbox-container .check-box::after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.radio-checkbox-container .radio-box::after {
+  left: 8px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.check-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 20%;
+  background-color: #eeeeee;
+  transition: all 0.2s ease-in-out;
+}
+.check-box::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.radio-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: #eeeeee;
+  transition: all 0.2s ease-in-out;
+}
+.radio-box::after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.button {
+  display: block;
+  position: relative;
+  height: 36px;
+  padding: 8px 24px;
+  margin: 12px auto;
+  background-color: #cccccc;
+  outline: none;
+  border: none;
+  border-radius: 18px;
+  transition: all 0.2s ease-in-out;
+  color: #161616;
+  min-width: 150px;
+  font-weight: 500;
+}
+.button:hover {
+  background-color: #00880b;
+  color: white;
+}
+.button:active {
+  background-color: #161616;
+}
+
+a.button {
+  text-decoration: none;
+  width: 180px;
+  height: 20px;
+  line-height: 15.6px;
+}
+
+a {
+  text-decoration: none;
+  line-height: 18px;
+  outline: none;
+  color: #0066b9;
+  transition: all 0.2s ease-in-out;
+}
+a:hover {
+  color: #ce1505;
+}
+
+.filter-section {
+  margin-top: 24px;
+}
+.filter-section p {
+  margin-left: 12px;
+  margin-right: 24px;
+  font-weight: 600;
+  color: #00880b;
+}
+.filter-section p.counter {
+  margin-left: 8px;
+  font-weight: 300;
+  display: inline;
+  color: #8a8a8a;
+}
+.filter-section::after {
+  content: "";
+  width: 150px;
+  height: 1px;
+  margin: auto;
+  position: relative;
+  display: block;
+  background-color: #cccccc;
+}
+
+a.filter-tag {
+  cursor: pointer;
+  display: inline-grid;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  grid-template-columns: auto auto;
+  grid-column-gap: 8px;
+  border: 1px solid #cccccc;
+  padding: 4px 4px 2px 12px;
+  border-radius: 19px;
+  color: #161616;
+}
+a.filter-tag:hover {
+  color: #ce1505;
+}
+a.filter-tag:hover span {
+  border-color: #ce1505;
+  color: #ce1505;
+}
+a.filter-tag p {
+  display: block;
+  line-height: 20px;
+}
+a.filter-tag span {
+  border: 1px solid #cccccc;
+  color: #8a8a8a;
+  border-radius: 8px;
+  height: 16px;
+  width: 16px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+a.reset-tag {
+  cursor: pointer;
+  margin-right: 12px;
+  color: #8a8a8a;
+  padding: 4px 12px;
+  border: 1px solid #ce1505;
+  border-radius: 20px;
+  display: inline-block;
+}
+a.reset-tag:hover {
+  color: #ce1505;
+}
+
+.product-item {
+  position: relative;
+  display: inline-block;
+  height: 388px;
+  width: 254px;
+  transition: all 0.4s ease-in-out;
+  margin-right: 8px;
+}
+.product-item .product-item-content {
+  width: 228px;
+  overflow: hidden;
+  max-height: 338px;
+  border: 1px solid #eeeeee;
+  padding: 12px;
+  padding-top: 36px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.4s ease-in-out;
+  background-color: white;
+  animation: animateClose 0.4s forwards;
+}
+.product-item .product-item-content:hover {
+  max-height: 800px;
+  border-color: #00880b;
+  animation: animateOpen 0.4s forwards;
+  box-shadow: 0px 0px 15px rgba(177, 177, 177, 0.863);
+}
+.product-item .product-item-content:hover::after {
+  content: none;
+}
+.product-item .product-item-content::after {
+  content: " ";
+  display: block;
+  height: 12px;
+  width: 254px;
+  position: absolute;
+  bottom: 0;
+  margin-left: -12px;
+  background: linear-gradient(transparent, white 80%, white);
+}
+@keyframes animateOpen {
+  0% {
+    z-index: 15;
+  }
+  100% {
+    z-index: 15;
+  }
+}
+@keyframes animateClose {
+  0% {
+    z-index: 15;
+  }
+  100% {
+    z-index: 0;
+  }
+}
+.product-item img {
+  max-height: 150px;
+  max-width: 210px;
+  display: block;
+  margin: auto;
+}
+.product-item .product-link {
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  font-weight: 500;
+  overflow: hidden;
+}
+.product-item .price-comment {
+  display: inline-grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: auto 1fr;
+  line-height: 18px;
+}
+.product-item .price-comment p {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.product-item .price-comment .price-normal {
+  background-color: #ffedb0;
+  grid-row: 2;
+}
+.product-item .price-comment .price-old {
+  margin-top: -20px;
+  color: #8a8a8a;
+  text-decoration: line-through #ce1505;
+  grid-row: 1;
+}
+.product-item .price-comment .price-new {
+  color: #ce1505;
+  background-color: #ffedb0;
+  grid-row: 2;
+}
+.product-item .price-comment .feedback {
+  display: inline-block;
+  margin-left: 12px;
+  grid-column: 2;
+  grid-row: 2;
+  line-height: 36px;
+}
+.product-item .price-comment .feedback i {
+  margin-right: 5.3333333333px;
+  font-size: 18px;
+  line-height: 18px;
+}
+.product-item .buyer-actions {
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.product-item .buyer-actions a {
+  font-size: 24px;
+  padding: 0 12px;
+  color: #f3bd2a;
+  display: inline-block;
+  width: 36px;
+  text-align: center;
+}
+.product-item .buyer-actions .buy {
+  color: #00880b;
+  border: 1px solid #cccccc;
+  border-width: 0 1px 0 0;
+}
+.product-item .buyer-actions .like {
+  color: #f3bd2a;
+  border: 1px solid #cccccc;
+  border-width: 0 1px 0 0;
+}
+.product-item .buyer-actions .compare {
+  color: #8a8a8a;
+}
+.product-item .description {
+  line-height: 18px;
+}
+
+html {
+  background-color: white;
+  color: #00880b;
+}
+
+body {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+  position: relative;
+  z-index: 0;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+#filter-container {
+  grid-column: 1;
+  grid-row: 1/3;
+  border: solid #cccccc;
+  border-width: 0 1px 0 0;
+}
+
+#tags-container {
+  padding: 12px;
+  grid-row: 1;
+  grid-column: 2;
+}
+
+#products-container {
+  grid-row: 2;
+  grid-column: 2;
+  padding: 12px;
+  display: block;
+  position: relative;
+  height: 1000px;
+}
+
+/*# sourceMappingURL=main.css.map */

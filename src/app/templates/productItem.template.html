@@ -1,0 +1,16 @@
+<div class="product-item-content">
+    <a [href]="link"><img [src]="imgSrc"></a>
+    <a [href]="link" class="product-link">{{name}}</a>
+    <div class="price-comment">
+        <p [ngClass]="{'price-old': isOnSale, 'price-normal': !isOnSale}">{{price}} грн</p>
+        <p class="price-new" *ngIf="isOnSale">{{newPrice}} грн</p>
+        <a href="#" class="feedback"><i class="far fa-comment"></i>отзывы</a>
+    </div>
+    
+    <div class="buyer-actions">
+        <a class="buy"><i class="fas fa-shopping-cart"></i></a>
+        <a class="like"><i class="far fa-heart"></i></a>
+        <a class="compare"><i class="fas fa-balance-scale"></i></a>
+    </div>
+    <p class="description">{{description}}</p>
+</div>

@@ -1,0 +1,2 @@
+<a class="filter-tag" *ngFor="let tag of tags" (click)="deleteClick(tag)"><p>{{tag}}</p><span>&times;</span></a>
+<a class="reset-tag" *ngIf="tags!=tags?.length>0" (click)="resetClick()">сбросить</a>

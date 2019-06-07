@@ -1,0 +1,235 @@
+
+
+//filter section style
+.filter-section{
+    margin-top: $spacing-normal;
+    p{
+        margin-left:$spacing-small;
+        margin-right: $spacing-normal;
+        font-weight: $font-weight-semi-bold;
+        color: $color2;
+        
+    }
+    p.counter{
+        margin-left: $spacing-smaller;
+        font-weight: $font-weight-light;
+        display: inline;
+        color: $color-dark-grey;
+    }
+    //aditional element on the top of the section
+    //to create a separator line between sections
+    &::after{
+        content:"";
+        width: 150px;
+        height: 1px;
+        margin: auto;
+        position: relative;
+        display:block;
+        background-color: $color-grey;
+    }
+}
+
+//filter tag style
+a.filter-tag{
+    cursor: pointer;
+    display: inline-grid;
+    margin-right: $spacing-small;
+    margin-bottom: $spacing-small;
+    grid-template-columns: auto auto;
+    grid-column-gap: $spacing-smaller;
+    border: 1px solid $color-grey;
+    padding: 4px 4px 2px $spacing-small;
+    border-radius: 19px;
+    color: $color1;
+    &:hover{
+        span{
+            border-color: $color4;
+            color: $color4;
+        }
+        color:$color4;
+    }
+    p{
+        display: block;
+        line-height: $font-normal+$spacing-smaller;
+    }
+    span{
+        border: 1px solid $color-grey;
+        color: $color-dark-grey;
+        border-radius: 8px;
+        height: 16px;
+        width: 16px;
+        text-align: center;
+        font-size: $font-large;
+        line-height: 16px;
+        transition: all 0.2s ease-in-out;
+    }
+}
+
+//reset tag button style
+a.reset-tag{
+    cursor: pointer;
+    margin-right: $spacing-small;
+    color:$color-dark-grey;
+    padding: 4px $spacing-small;
+    border: 1px solid $color4;
+    border-radius: 20px;
+    display: inline-block;
+    &:hover{
+        color: $color4;
+    }
+}
+
+//product item style
+.product-item{
+    position: relative;
+    display: inline-block;
+    height: 340 + $spacing-small + $spacing-large;
+    width: 230 + 2*$spacing-small;
+    transition: all 0.4s ease-in-out;
+    margin-right: $spacing-smaller;
+
+    //additional container with absolute positioning
+    //to allow height enlarging on hover
+    //with no effect for other elements
+    .product-item-content{
+        width: 228px;
+        overflow: hidden;
+        max-height: 338px;
+        border: 1px solid $color-light-grey;
+        padding: $spacing-small;
+        padding-top: $spacing-large;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.4s ease-in-out;
+        background-color: $color3; 
+        animation: animateClose 0.4s forwards;
+        &:hover{
+            max-height: 800px;
+            border-color: $color2;
+            animation: animateOpen 0.4s forwards;
+            box-shadow: 0px 0px 15px rgba(177, 177, 177, 0.863);
+            &::after{
+                content: none;
+            }
+        }
+
+        //additional element at the bottom of the product item
+        //to make some blur effect for overflowing content
+        //near the item border
+        &::after{
+            content: ' ';
+            display: block;
+            height: $spacing-small;
+            width: 230 + 2*$spacing-small;
+            position: absolute;
+            bottom: 0;
+            margin-left: -$spacing-small;
+            background: linear-gradient(transparent, $color3 80%,  $color3);
+        }
+        @keyframes animateOpen {
+            0%{
+                z-index: 15; 
+            }
+            100%{
+                z-index: 15;
+            }
+        }
+        @keyframes animateClose {
+            0%{
+                z-index: 15;
+            }
+            100%{
+                z-index:0;
+            }
+        }
+    }
+
+    
+    img{
+        max-height: 150px;
+        max-width: 210px;
+        display: block;
+        margin: auto;
+    }
+    .product-link{
+        display: block;
+        margin-top: $spacing-normal;
+        margin-bottom: $spacing-normal;
+        font-weight: $font-weight-medium;
+        overflow:hidden;
+    }
+    .price-comment{
+        display: inline-grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: auto 1fr;
+        line-height: $font-large;
+        p{
+            padding: $spacing-smaller $spacing-small;
+            border-radius: 10px;
+            font-size:$font-large;
+            font-weight: $font-weight-semi-bold;
+        }
+        .price-normal{
+            background-color: $color5;
+            grid-row: 2;
+        }
+        .price-old{
+            margin-top: -$spacing-small - $spacing-smaller;
+            color:$color-dark-grey;
+            text-decoration: line-through $color4 ;
+            grid-row: 1;
+        }
+        .price-new{
+            color: $color4;
+            background-color: $color5;
+            grid-row: 2;
+        }
+       
+        .feedback{
+            display: inline-block;
+            margin-left:$spacing-small;
+            grid-column: 2;
+            grid-row:2;
+            line-height: $font-largest;
+            i{
+                margin-right: $spacing-smaller/1.5;
+                font-size: $font-large;
+                line-height: $font-large;
+            }
+        }
+
+        
+    }
+    
+    .buyer-actions{
+        display: block;
+        margin-top: $spacing-normal;
+        margin-bottom: $spacing-normal;
+        a{
+            font-size: $font-larger;
+            padding: 0 $spacing-small;
+            color: $color7;
+            display: inline-block;
+            width: $spacing-large;
+            text-align: center;
+        }
+        .buy{
+            color: $color2;
+            border: 1px solid $color-grey;
+            border-width: 0 1px 0 0;
+        }
+        .like{
+            color: $color7;
+            border: 1px solid $color-grey;
+            border-width: 0 1px 0 0;
+        }
+        .compare{
+            color: $color-dark-grey;
+        }
+    }
+
+    .description{
+        line-height: $font-large;
+    }
+}

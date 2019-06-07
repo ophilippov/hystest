@@ -1,0 +1,10 @@
+<div class="filter-section">
+    <p>{{header}}</p>
+    <div class="filter-item" *ngFor="let item of items">
+        <label class="radio-checkbox-container">
+            <div>{{item.header}} <p class="counter">( {{item.amount}} )</p> </div>
+            <input type="checkbox" [(ngModel)]="item.isChecked" (click)="stateChanged()"/>
+            <span class="check-box"></span>
+        </label>
+    </div>
+</div>

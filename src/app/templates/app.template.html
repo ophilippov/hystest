@@ -1,0 +1,5 @@
+<div id="container">
+    <filter id="filter-container" (onFilterChanged)="updateView()" [sections]="filterSections" ></filter>
+    <tags id="tags-container" (onTagClick)="onTagClick($event)" (onResetClick)="onResetTagClick()" [tags]="filterTags"> </tags>
+    <products id="products-container" [products]="productsFiltered"></products>
+</div>
